@@ -59,6 +59,9 @@ fun Food.discountedPrice(discountedPercent: Double): Double {
 //Main
 fun main(){
 
+    println("SISTEMA DE PEDIDOS")
+    println()
+
     //Creación de las instancias
     val burger = Burger("Carnívora", 50.0)
     val pizza = Pizza("4 quesos", 45.0)
@@ -70,4 +73,20 @@ fun main(){
     println(pizza.cook())
     println(iceCream.cook())
     println(juice.cook())
+
+    println()
+
+    //Comer el helado
+    println(iceCream.eat())
+
+    println()
+
+    //Vertir el jugo
+    println(juice.pour())
+
+    println()
+
+    //Calcular el descuento de la hamburguesa y mostrar el precio final
+    val newBurgerPrice = burger.discountedPrice(20.0)
+    println("El precio de la hamburguesa luego de aplicar el descuento es de $newBurgerPrice")
 }
