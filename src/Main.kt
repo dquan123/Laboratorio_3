@@ -1,3 +1,7 @@
+//Ejercicio: Laboratorio 3
+//Autor: Diego Quan
+//Fecha: 24/07/2025
+
 //Clase abstracta de comidas
 abstract class Food(val name: String, val price: Double){
     abstract fun cook(): String
