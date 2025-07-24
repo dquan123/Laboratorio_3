@@ -10,7 +10,7 @@ class Burger(name: String, price: Double) : Food(name, price){
     }
 }
 
-//Subclase burger
+//Subclase pizza
 class Pizza(name: String, price: Double) : Food(name, price){
     override fun cook(): String {
         return "La pizza $name se hornea hasta que las orillas se vean cafés"
@@ -23,7 +23,7 @@ interface Dessert {
 }
 
 //Clase IceCream que hereda de Food y usa Dessert
-class IceCream(name: String, price: Double) : Food(name, price){
+class IceCream(name: String, price: Double) : Food(name, price), Dessert{
     override fun cook(): String {
         return "El helado $name se enfría durante 1 día para que se cristalice"
     }
@@ -54,4 +54,20 @@ class Juice(name: String, price: Double) : Drink(name, price){
 fun Food.discountedPrice(discountedPercent: Double): Double {
     val discount = price * (discountedPercent / 100)
     return price - discount
+}
+
+//Main
+fun main(){
+
+    //Creación de las instancias
+    val burger = Burger("Carnívora", 50.0)
+    val pizza = Pizza("4 quesos", 45.0)
+    val iceCream = IceCream("Mora", 12.0)
+    val juice = Juice("Naranja", 15.0)
+
+    //Mostrar omo se cocinan los alimentos
+    println(burger.cook())
+    println(pizza.cook())
+    println(iceCream.cook())
+    println(juice.cook())
 }
